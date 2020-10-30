@@ -60,7 +60,7 @@ cuantoCuestaEntrar(Lugar,Entrada):-
 %% considerando la cantidad de visitantes y el precio unitario con impuesto.
 
 %% podría usar directamente como auxiliar la anterior
-recuadacionTotal(Lugar,Recaudacion):-
+recaudacionTotal(Lugar,Recaudacion):-
     cuantoCuestaEntrar(Lugar,Precio),
     lugar(Lugar,_,Visitantes,_),
     Recaudacion is Precio * Visitantes.
@@ -68,7 +68,7 @@ recuadacionTotal(Lugar,Recaudacion):-
 %% Refactorización de la solución, delegando más, con predicados diferentes,
 %% y evitando lógica repetida
 
-recuadacionTotal2(Lugar,Recaudacion):-
+recaudacionTotal2(Lugar,Recaudacion):-
         lugar(Lugar,Tipo,Visitantes,Entrada),
         precioUnitario(Tipo,Entrada,Precio),
         Recaudacion is Precio * Visitantes.
